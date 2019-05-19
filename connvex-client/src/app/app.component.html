@@ -1,0 +1,46 @@
+<div class="wrapper">
+    <div class="alert alert-primary" *ngIf="success || error">
+        <p *ngIf="success" class="success"> {{success}}</p>
+        <p *ngIf="error" class="danger"> {{danger}}</p>
+      </div>
+    <div class="table-con">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Value</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor = "let val of initialValues"
+               >
+                <td>{{val.label}}</td>
+                <td class="p-0"  *ngIf= "val.type == 'text'">
+                    <mat-form-field class="w-100" floatLabel=never>
+                        <input matInput [placeholder]="val.label" [(ngModel)]="val.value">
+                    </mat-form-field>
+                </td>
+                <td *ngIf= "val.type == 'check'">
+                  <mat-checkbox [(ngModel)]= "val.value" [checked] = "val.value"></mat-checkbox>
+                </td>
+                <td class="p-0" *ngIf= "val.type == 'select'">
+                  <mat-form-field class="w-100" >
+                      <mat-select [(ngModel)]="val.value">
+                      <mat-option *ngFor="let op of val.options" [value]="op">
+                          {{op}}
+                      </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>{{val.description}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+
+    <div class="btn-con" >
+      <button mat-raised-button color="accent" (click) = "save()">Save</button>
+    </div>
+
+</div>

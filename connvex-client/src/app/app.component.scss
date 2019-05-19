@@ -1,0 +1,30 @@
+.table-con {
+    margin: 20px;
+    border: 1px solid #eee;
+    table {
+        width: 100%;
+        tr {
+            display: flex;
+            td, th {
+                border: none;
+                flex:1;
+            }
+        }
+    
+    }
+}
+.w-100 {
+    width: 100%;
+}
+.btn-con {
+    margin: 30px 20px;
+   button {
+    float: right;
+   }
+}
+.success {
+    color: lightgreen;
+}
+.danger {
+    color: lightcoral;
+}
