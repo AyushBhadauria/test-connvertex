@@ -1,0 +1,10 @@
+-cd convexx-server 
+  npm i
+  npm start
+  
+
+-cd connvex-client
+  npm i
+  ng serve
+  open localhost:4200 in browser
+
